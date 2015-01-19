@@ -1,15 +1,31 @@
+%h1.text-center
+  Online highlighter
 .row
-  .four.columns
-    %canvas#canvas
-
-  .four.columns
-    %textarea#editor
+  .field
+    %textarea#editor.input.textarea
       :plain
         def hoge
           fuga
         end
 
-  .four.columns
+.row
+  .eleven.columns.centered
     #code
       %pre
         %code.ruby
+
+.row
+  .centered.text-center
+    %p.medium.btn.default
+      %a.switch#button(gumby-trigger="#modal")
+        Create image
+
+.modal#modal
+  .content
+    .row
+      .twelve.columns.centered.text-center
+        %canvas#canvas
+
+        %p.btn.primary.medium
+          %a.switch(gumby-trigger='|#modal')
+            Close
