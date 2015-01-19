@@ -10,8 +10,8 @@ $ ->
     $.get('/stylesheets/wip.css').complete (r) ->
       width  = $('#code').width()  * 2
       height = $('#code').height() * 2
-      $('#canvas').width(width)
-      $('#canvas').height(height)
+      $('#canvas').width(width / 2)
+      $('#canvas').height(height / 2)
 
       data = "<svg xmlns='http://www.w3.org/2000/svg' width='#{width}' height='#{height}'>" +
              "<foreignObject width='100%' height='100%'>" +
