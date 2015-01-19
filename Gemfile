@@ -6,3 +6,5 @@ gem 'middleman-livereload'
 
 gem 'rails-assets-jquery'
 gem 'rails-assets-highlightjs'
+
+gem 'pry-byebug'
