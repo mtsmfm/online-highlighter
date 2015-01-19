@@ -8,12 +8,15 @@ $ ->
 
   $('#button').click ->
     $.get('/stylesheets/wip.css').complete (r) ->
-      width  = $('#code').width()  * 2
-      height = $('#code').height() * 2
-      $('#canvas').width(width / 2)
-      $('#canvas').height(height / 2)
+      scale = 2
 
-      data = "<svg xmlns='http://www.w3.org/2000/svg' width='#{width}' height='#{height}'>" +
+      width  = $('#code').width()
+      height = $('#code').height()
+
+      $('#canvas').width(width   * 1.8)
+      $('#canvas').height(height * 1.8)
+
+      data = "<svg xmlns='http://www.w3.org/2000/svg' width='#{width * scale}' height='#{height * scale}'>" +
              "<foreignObject width='100%' height='100%'>" +
              '<div xmlns="http://www.w3.org/1999/xhtml">' +
              '<style type="text/css" >' +
@@ -28,9 +31,9 @@ $ ->
 
       canvas = document.getElementById('canvas')
       ctx = canvas.getContext('2d')
-      ctx.canvas.width  = width
-      ctx.canvas.height = height
-      ctx.scale(2,2)
+      ctx.canvas.width  = width  * scale
+      ctx.canvas.height = height * scale
+      ctx.scale(scale, scale)
       DOMURL = window.URL || window.webkitURL || window
 
       img = new Image()

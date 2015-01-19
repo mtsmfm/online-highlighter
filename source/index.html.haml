@@ -1,26 +1,37 @@
 %h1.text-center
   Online highlighter
-.row
-  .field.eleven.columns.centered
-    %textarea#editor.input.textarea
-      :preserve
-        class Klass
-          def method
-            puts "hi"
-          end
-        end
 
 .row
-  .eleven.columns.centered
+  .six.columns
+    .field
+      %textarea#editor.input.textarea
+        :preserve
+          class Klass
+            def method
+              puts "hi"
+            end
+          end
+
+    %ul
+      %li.field
+        .picker
+          %select
+            %option monokai
+
+      %li.field
+        .picker
+          %select
+            %option ruby
+
+      .text-center
+        %p.medium.btn.primary
+          %a.switch#button(gumby-trigger="#modal")
+            Create image
+
+  .six.columns
     #code
       %pre
         %code.ruby
-
-.row
-  .centered.text-center
-    %p.medium.btn.primary
-      %a.switch#button(gumby-trigger="#modal")
-        Create image
 
 .modal#modal
   .content
