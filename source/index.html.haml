@@ -1,11 +1,15 @@
-%canvas#canvas
+.row
+  .four.columns
+    %canvas#canvas
 
-%textarea#editor
-  :plain
-    def hoge
-      fuga
-    end
+  .four.columns
+    %textarea#editor
+      :plain
+        def hoge
+          fuga
+        end
 
-#code
-  %pre
-    %code.ruby
+  .four.columns
+    #code
+      %pre
+        %code.ruby

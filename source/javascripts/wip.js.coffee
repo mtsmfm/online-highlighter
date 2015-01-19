@@ -6,14 +6,14 @@ $ ->
     hljs.highlightBlock($('#code code')[0])
 
     $.get('/stylesheets/wip.css').complete (r) ->
-      width  = $('#code code').width()
-      height = $('#code code').height()
+      width  = $('#code').width()
+      height = $('#code').height()
       $('#canvas').width(width)
       $('#canvas').height(height)
 
-      data = "<svg xmlns='http://www.w3.org/2000/svg' width='#{width}' height='#{height}'>" +
+      data = "<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'>" +
              "<foreignObject width='100%' height='100%'>" +
-             '<div xmlns="http://www.w3.org/1999/xhtml" style="font-size:12px">' +
+             '<div xmlns="http://www.w3.org/1999/xhtml">' +
              '<style type="text/css" >' +
              '<![CDATA[' +
              r.responseText +
