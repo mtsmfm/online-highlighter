@@ -3,9 +3,11 @@
 .row
   .field
     %textarea#editor.input.textarea
-      :plain
-        def hoge
-          fuga
+      :preserve
+        class Klass
+          def method
+            puts "hi"
+          end
         end
 
 .row

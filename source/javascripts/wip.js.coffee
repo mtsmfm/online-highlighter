@@ -1,7 +1,8 @@
 $ ->
+  $('#code code').text($('#editor').val())
   hljs.initHighlightingOnLoad()
 
-  $('#editor').change ->
+  $('#editor').on 'change keyup', ->
     $('#code code').text($(@).val())
     hljs.highlightBlock($('#code code')[0])
 
