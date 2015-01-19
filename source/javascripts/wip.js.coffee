@@ -8,8 +8,8 @@ $ ->
 
   $('#button').click ->
     $.get('/stylesheets/wip.css').complete (r) ->
-      width  = $('#code').width()
-      height = $('#code').height()
+      width  = $('#code').width()  * 2
+      height = $('#code').height() * 2
       $('#canvas').width(width)
       $('#canvas').height(height)
 
@@ -30,6 +30,7 @@ $ ->
       ctx = canvas.getContext('2d')
       ctx.canvas.width  = width
       ctx.canvas.height = height
+      ctx.scale(2,2)
       DOMURL = window.URL || window.webkitURL || window
 
       img = new Image()
